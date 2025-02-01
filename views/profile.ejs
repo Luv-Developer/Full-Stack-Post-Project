@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel = "stylesheet" type = "text/css" href = "/stylesheets/profile.css">
+</head>
+<body>
+    <form action = "/logout" method = "post">
+    <button id = "logout">Logout</button>
+    </form>
+    <form action = "/post" method = "post">
+    <div id = "container">
+    <h1>Hello <%= user.name   %>👋</h1>
+    <h5>You can create a new post.</h5>
+    <textarea placeholder="What's on your Mind ?" name = "content"></textarea><br><br>
+    <button>Create New Post</button>
+    </div>
+</form>
+    <h6>Your Post.</h6>
+    <div id = "posts">
+        <% user.posts.reverse().forEach(function(post){  %>
+            <div id = "postcontainer">
+                <p><%= post.content   %></p>
+            </div>
+       <% })  %>
+    </div>
+    </div>
+</body>
+</html>
